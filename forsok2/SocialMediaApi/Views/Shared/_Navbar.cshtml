@@ -1,0 +1,40 @@
+@inject Microsoft.AspNetCore.Identity.UserManager<SocialMediaApi.Models.ApplicationUser> UserManager
+@inject Microsoft.AspNetCore.Identity.SignInManager<SocialMediaApi.Models.ApplicationUser> SignInManager
+
+<nav class="flex flex-row items-center justify-between p-4">
+    <div class="flex flex-row items-center justify-center gap-4">
+        <div class="flex flex-row items-center justify-center gap-4">
+            <a href="~/">
+                <h1 class="text-center">Social Media</h1>
+            </a>
+        </div>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <a href="~/Post/Create">
+                <button class="btn">Create Post+</button>
+            </a>
+        }
+    </div>
+    <div class="flex flex-row gap-4">
+        <button class="btn">Mode Toggle</button>
+
+        @if (!SignInManager.IsSignedIn(User))
+        {
+            <a href="~/Account/Login">
+                <button class="btn">Login</button>
+            </a>
+            <a href="~/Account/Register">
+                <button class="btn">Register</button>
+            </a>
+        }
+        else
+        {
+            <span class="text-l flex items-center justify-center text-center">
+                @UserManager.GetUserName(User)
+            </span>
+            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn">Logout</button>
+            </form>
+        }
+    </div>
+</nav>

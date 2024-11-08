@@ -1,0 +1,27 @@
+@model SocialMediaApi.ViewModels.RegisterViewModel
+
+<h2>Register</h2>
+
+<form method="post" asp-action="Register">
+    <div>
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" name="Email" asp-for="Email" />
+    </div>
+    <div>
+        <label for="FullName">Full Name:</label>
+        <input type="text" id="FullName" name="FullName" asp-for="FullName" />
+    </div>
+    <div>
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" asp-for="Username" />
+    </div>
+    <div>
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" name="Password" asp-for="Password" />
+    </div>
+    <div>
+        <label for="ConfirmPassword">Confirm Password:</label>
+        <input type="password" id="ConfirmPassword" name="ConfirmPassword" asp-for="ConfirmPassword" />
+    </div>
+    <button type="submit">Register</button>
+</form>

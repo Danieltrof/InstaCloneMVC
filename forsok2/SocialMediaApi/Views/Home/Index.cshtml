@@ -1,0 +1,27 @@
+@model List<SocialMediaApi.Models.PostDto>  
+
+@{
+    Layout = "_Layout";  
+}
+
+<h1>Feed</h1>
+
+@foreach (var post in Model)
+{
+    <div class="post">
+        <h2>@post.Title</h2>
+        <img src="@post.ImageUrl" alt="Post Image" />
+        <p>@post.User.Name (@post.User.Username) - @post.Created</p>
+        <div class="likes">
+            Likes: @post.LikesCount
+        </div>
+        <div class="comments">
+            @foreach (var comment in post.Comments)
+            {
+                <div class="comment">
+                    <p>@comment.User.Name (@comment.User.Username): @comment.Content</p>
+                </div>
+            }
+        </div>
+    </div>
+}

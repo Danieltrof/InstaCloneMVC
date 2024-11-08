@@ -1,0 +1,597 @@
+2024-11-07 21:29:32.854 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-11-07 21:29:32.905 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2024-11-07 21:29:32.908 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-07 21:29:32.910 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-07 21:29:32.916 +01:00 [INF] Applying migration '20241107202929_DBinit'.
+2024-11-07 21:29:32.945 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2024-11-07 21:29:32.945 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" TEXT NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY,
+    "Name" TEXT NOT NULL,
+    "UserName" TEXT NULL,
+    "NormalizedUserName" TEXT NULL,
+    "Email" TEXT NULL,
+    "NormalizedEmail" TEXT NULL,
+    "EmailConfirmed" INTEGER NOT NULL,
+    "PasswordHash" TEXT NULL,
+    "SecurityStamp" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "PhoneNumberConfirmed" INTEGER NOT NULL,
+    "TwoFactorEnabled" INTEGER NOT NULL,
+    "LockoutEnd" TEXT NULL,
+    "LockoutEnabled" INTEGER NOT NULL,
+    "AccessFailedCount" INTEGER NOT NULL
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY AUTOINCREMENT,
+    "RoleId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY AUTOINCREMENT,
+    "UserId" TEXT NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" TEXT NOT NULL,
+    "ProviderKey" TEXT NOT NULL,
+    "ProviderDisplayName" TEXT NULL,
+    "UserId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" TEXT NOT NULL,
+    "RoleId" TEXT NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" TEXT NOT NULL,
+    "LoginProvider" TEXT NOT NULL,
+    "Name" TEXT NOT NULL,
+    "Value" TEXT NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Posts" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Posts" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NOT NULL,
+    "ImageUrl" TEXT NOT NULL,
+    "Created" TEXT NOT NULL,
+    "LikesCount" INTEGER NOT NULL,
+    "UserId" TEXT NULL,
+    CONSTRAINT "FK_Posts_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id")
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Comments" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Comments" PRIMARY KEY AUTOINCREMENT,
+    "Content" TEXT NOT NULL,
+    "PostId" INTEGER NOT NULL,
+    "Created" TEXT NOT NULL,
+    "UserId" TEXT NULL,
+    CONSTRAINT "FK_Comments_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id"),
+    CONSTRAINT "FK_Comments_Posts_PostId" FOREIGN KEY ("PostId") REFERENCES "Posts" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Likes" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Likes" PRIMARY KEY AUTOINCREMENT,
+    "PostId" INTEGER NOT NULL,
+    "UserId" TEXT NULL,
+    CONSTRAINT "FK_Likes_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id"),
+    CONSTRAINT "FK_Likes_Posts_PostId" FOREIGN KEY ("PostId") REFERENCES "Posts" ("Id") ON DELETE CASCADE
+);
+2024-11-07 21:29:32.946 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Comments_PostId" ON "Comments" ("PostId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Comments_UserId" ON "Comments" ("UserId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Likes_PostId" ON "Likes" ("PostId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Likes_UserId" ON "Likes" ("UserId");
+2024-11-07 21:29:32.947 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Posts_UserId" ON "Posts" ("UserId");
+2024-11-07 21:29:32.948 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20241107202929_DBinit', '8.0.8');
+2024-11-07 21:29:46.369 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-07 21:29:46.789 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-07 21:29:46.792 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-07 21:29:46.796 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-07 21:29:46.804 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-07 21:29:46.911 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-07 21:29:46.916 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-07 21:29:46.973 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (Size = 5), @p3='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("Id", "ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2, @p3);
+2024-11-07 21:29:46.982 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-07 21:29:47.030 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:29:47.057 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 5), @p8='?' (Size = 15), @p9='?' (Size = 5), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-11-07 21:29:47.060 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2024-11-07 21:29:47.070 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2024-11-07 21:29:47.071 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2024-11-07 21:29:47.076 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:29:47.083 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+VALUES (@p0, @p1);
+2024-11-07 21:29:47.084 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p15='?' (Size = 36), @p0='?' (DbType = Int32), @p1='?' (Size = 36), @p16='?' (Size = 36), @p2='?' (Size = 15), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 5), @p7='?' (Size = 15), @p8='?' (Size = 5), @p9='?' (Size = 84), @p10='?', @p11='?' (DbType = Boolean), @p12='?' (Size = 32), @p13='?' (DbType = Boolean), @p14='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "LockoutEnabled" = @p4, "LockoutEnd" = @p5, "Name" = @p6, "NormalizedEmail" = @p7, "NormalizedUserName" = @p8, "PasswordHash" = @p9, "PhoneNumber" = @p10, "PhoneNumberConfirmed" = @p11, "SecurityStamp" = @p12, "TwoFactorEnabled" = @p13, "UserName" = @p14
+WHERE "Id" = @p15 AND "ConcurrencyStamp" = @p16
+RETURNING 1;
+2024-11-07 21:29:47.089 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-07 21:29:47.131 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:29:47.133 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 16), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4), @p8='?' (Size = 16), @p9='?' (Size = 4), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-11-07 21:29:47.133 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-07 21:29:47.176 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:29:47.177 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 16), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4), @p8='?' (Size = 16), @p9='?' (Size = 4), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-11-07 21:29:47.177 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-07 21:29:47.231 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:29:47.232 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 15), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 3), @p8='?' (Size = 15), @p9='?' (Size = 3), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-11-07 21:29:47.238 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-07 21:29:47.241 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+2024-11-07 21:29:47.261 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 19), @p2='?' (DbType = Int32), @p3='?' (Size = 13), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Posts" ("Created", "ImageUrl", "LikesCount", "Title", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2024-11-07 21:29:47.265 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 20), @p2='?' (DbType = Int32), @p3='?' (Size = 16), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Posts" ("Created", "ImageUrl", "LikesCount", "Title", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2024-11-07 21:29:47.265 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 17), @p2='?' (DbType = Int32), @p3='?' (Size = 10), @p4='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Posts" ("Created", "ImageUrl", "LikesCount", "Title", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2024-11-07 21:29:47.278 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 25), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.278 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 17), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.279 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 14), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.279 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 21), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.279 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 19), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.279 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.279 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 16), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:29:47.372 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-07 21:29:47.373 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-07 21:29:47.373 +01:00 [INF] Hosting environment: Development
+2024-11-07 21:29:47.373 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\webapp-social\SocialMediaApi
+2024-11-07 21:30:24.225 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger - null null
+2024-11-07 21:30:24.248 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger - 301 0 null 25.0747ms
+2024-11-07 21:30:24.251 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-07 21:30:24.282 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 31.0433ms
+2024-11-07 21:30:24.293 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui.css - null null
+2024-11-07 21:30:24.294 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui-bundle.js - null null
+2024-11-07 21:30:24.294 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui-standalone-preset.js - null null
+2024-11-07 21:30:24.294 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-07 21:30:24.295 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.7803ms
+2024-11-07 21:30:24.304 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-11-07 21:30:24.304 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-11-07 21:30:24.305 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 10.7155ms
+2024-11-07 21:30:24.305 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui.css - 200 143943 text/css 12.1061ms
+2024-11-07 21:30:24.310 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-11-07 21:30:24.310 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 16.5515ms
+2024-11-07 21:30:24.560 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-07 21:30:24.571 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/favicon-32x32.png - null null
+2024-11-07 21:30:24.572 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-07 21:30:24.572 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/favicon-32x32.png - 200 628 image/png 0.4854ms
+2024-11-07 21:30:24.616 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.4665ms
+2024-11-07 21:31:06.592 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/Auth/register - null null
+2024-11-07 21:31:06.595 +01:00 [WRN] Failed to determine the https port for redirect.
+2024-11-07 21:31:06.596 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:06.597 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/Auth/register - 204 null null 4.7713ms
+2024-11-07 21:31:06.598 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5193/api/Auth/register - application/json 89
+2024-11-07 21:31:06.600 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:06.607 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi)'
+2024-11-07 21:31:06.617 +01:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(SocialMediaApi.Models.RegisterDto) on controller SocialMediaApi.Controllers.AuthController (SocialMediaApi).
+2024-11-07 21:31:06.661 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-11-07 21:31:06.682 +01:00 [INF] Executed action SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi) in 62.6057ms
+2024-11-07 21:31:06.682 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi)'
+2024-11-07 21:31:06.683 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5193/api/Auth/register - 400 313 application/problem+json; charset=utf-8 84.0938ms
+2024-11-07 21:31:31.338 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/Auth/register - null null
+2024-11-07 21:31:31.340 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:31.340 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/Auth/register - 204 null null 2.2446ms
+2024-11-07 21:31:31.342 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5193/api/Auth/register - application/json 88
+2024-11-07 21:31:31.342 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:31.343 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi)'
+2024-11-07 21:31:31.343 +01:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(SocialMediaApi.Models.RegisterDto) on controller SocialMediaApi.Controllers.AuthController (SocialMediaApi).
+2024-11-07 21:31:31.362 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-07 21:31:31.406 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2024-11-07 21:31:31.408 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 20), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4), @p8='?' (Size = 20), @p9='?' (Size = 6), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-11-07 21:31:31.422 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2024-11-07 21:31:31.430 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2024-11-07 21:31:31.433 +01:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2024-11-07 21:31:31.434 +01:00 [INF] Executing OkObjectResult, writing value of type 'SocialMediaApi.Models.UserDto'.
+2024-11-07 21:31:31.434 +01:00 [INF] Executed action SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi) in 91.7684ms
+2024-11-07 21:31:31.435 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AuthController.Register (SocialMediaApi)'
+2024-11-07 21:31:31.436 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5193/api/Auth/register - 200 66 application/json; charset=utf-8 94.065ms
+2024-11-07 21:31:31.455 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/post - null null
+2024-11-07 21:31:31.455 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:31.455 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/post - 204 null null 0.2414ms
+2024-11-07 21:31:31.456 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/api/post - application/json null
+2024-11-07 21:31:31.456 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:31.457 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:31:31.459 +01:00 [INF] Route matched with {action = "GetAllPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPosts() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-07 21:31:31.529 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-11-07 21:31:31.534 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-07 21:31:31.542 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SocialMediaApi.Models.Post, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SocialMediaApi.Models.PostDto, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-07 21:31:31.547 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi) in 87.8912ms
+2024-11-07 21:31:31.547 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:31:31.547 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/api/post - 200 1668 application/json; charset=utf-8 91.1836ms
+2024-11-07 21:31:31.547 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/api/post - application/json null
+2024-11-07 21:31:31.548 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:31.548 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:31:31.548 +01:00 [INF] Route matched with {action = "GetAllPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPosts() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-07 21:31:31.552 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-07 21:31:31.553 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SocialMediaApi.Models.Post, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SocialMediaApi.Models.PostDto, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-07 21:31:31.554 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi) in 5.7775ms
+2024-11-07 21:31:31.554 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:31:31.554 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/api/post - 200 1668 application/json; charset=utf-8 6.1762ms
+2024-11-07 21:31:31.575 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193//uploads/sunset.webp - null null
+2024-11-07 21:31:31.575 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193//uploads/cat.webp - null null
+2024-11-07 21:31:31.575 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193//uploads/poost.webp - null null
+2024-11-07 21:31:31.585 +01:00 [INF] Sending file. Request path: '//uploads/poost.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\webapp-social\SocialMediaApi\wwwroot\uploads\poost.webp'
+2024-11-07 21:31:31.585 +01:00 [INF] Sending file. Request path: '//uploads/cat.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\webapp-social\SocialMediaApi\wwwroot\uploads\cat.webp'
+2024-11-07 21:31:31.585 +01:00 [INF] Sending file. Request path: '//uploads/sunset.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\webapp-social\SocialMediaApi\wwwroot\uploads\sunset.webp'
+2024-11-07 21:31:31.585 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193//uploads/cat.webp - 200 24784 image/webp 9.8235ms
+2024-11-07 21:31:31.585 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193//uploads/sunset.webp - 200 47170 image/webp 9.8807ms
+2024-11-07 21:31:31.585 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193//uploads/poost.webp - 200 6430 image/webp 9.8008ms
+2024-11-07 21:31:56.965 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5193/api/like/1 - null 0
+2024-11-07 21:31:56.966 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:56.970 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.LikeController.LikePost (SocialMediaApi)'
+2024-11-07 21:31:56.984 +01:00 [INF] Route matched with {action = "LikePost", controller = "Like"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LikePost(Int32) on controller SocialMediaApi.Controllers.LikeController (SocialMediaApi).
+2024-11-07 21:31:56.990 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2024-11-07 21:31:56.995 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32), @__userId_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Likes" AS "l"
+    INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+    LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+    WHERE "p"."Id" = @__postId_0 AND "a"."Id" = @__userId_1)
+2024-11-07 21:31:57.000 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId"
+FROM "Posts" AS "p"
+WHERE "p"."Id" = @__p_0
+LIMIT 1
+2024-11-07 21:31:57.006 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32), @__userId_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "l"."Id", "l"."PostId", "l"."UserId", "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Likes" AS "l"
+INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+WHERE "p"."Id" = @__postId_0 AND "a"."Id" = @__userId_1
+LIMIT 1
+2024-11-07 21:31:57.011 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Likes" ("PostId", "UserId")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-11-07 21:31:57.012 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Posts" SET "LikesCount" = @p0
+WHERE "Id" = @p1
+RETURNING 1;
+2024-11-07 21:31:57.019 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "l"."Id", "l"."PostId", "l"."UserId", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Likes" AS "l"
+INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+WHERE "p"."Id" = @__postId_0
+2024-11-07 21:31:57.019 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SocialMediaApi.Models.Like, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-07 21:31:57.024 +01:00 [INF] Executed action SocialMediaApi.Controllers.LikeController.LikePost (SocialMediaApi) in 40.4651ms
+2024-11-07 21:31:57.025 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.LikeController.LikePost (SocialMediaApi)'
+2024-11-07 21:31:57.025 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5193/api/like/1 - 200 780 application/json; charset=utf-8 59.2776ms
+2024-11-07 21:31:58.985 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/like/1 - null null
+2024-11-07 21:31:58.986 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:58.986 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/like/1 - 204 null null 0.4612ms
+2024-11-07 21:31:58.987 +01:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5193/api/like/1 - null null
+2024-11-07 21:31:58.987 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:31:58.990 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.LikeController.UnlikePost (SocialMediaApi)'
+2024-11-07 21:31:58.993 +01:00 [INF] Route matched with {action = "UnlikePost", controller = "Like"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UnlikePost(Int32) on controller SocialMediaApi.Controllers.LikeController (SocialMediaApi).
+2024-11-07 21:31:58.995 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2024-11-07 21:31:58.995 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32), @__userId_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Likes" AS "l"
+    INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+    LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+    WHERE "p"."Id" = @__postId_0 AND "a"."Id" = @__userId_1)
+2024-11-07 21:31:59.000 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32), @__userId_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "l"."Id", "l"."PostId", "l"."UserId", "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Likes" AS "l"
+INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+WHERE "p"."Id" = @__postId_0 AND "a"."Id" = @__userId_1
+LIMIT 1
+2024-11-07 21:31:59.003 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Likes"
+WHERE "Id" = @p0
+RETURNING 1;
+2024-11-07 21:31:59.003 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Posts" SET "LikesCount" = @p0
+WHERE "Id" = @p1
+RETURNING 1;
+2024-11-07 21:31:59.006 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__postId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "l"."Id", "l"."PostId", "l"."UserId", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "Likes" AS "l"
+INNER JOIN "Posts" AS "p" ON "l"."PostId" = "p"."Id"
+LEFT JOIN "AspNetUsers" AS "a" ON "l"."UserId" = "a"."Id"
+WHERE "p"."Id" = @__postId_0
+2024-11-07 21:31:59.006 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SocialMediaApi.Models.Like, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-07 21:31:59.006 +01:00 [INF] Executed action SocialMediaApi.Controllers.LikeController.UnlikePost (SocialMediaApi) in 12.9186ms
+2024-11-07 21:31:59.006 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.LikeController.UnlikePost (SocialMediaApi)'
+2024-11-07 21:31:59.006 +01:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5193/api/like/1 - 200 50 application/json; charset=utf-8 19.29ms
+2024-11-07 21:32:06.954 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/comment - null null
+2024-11-07 21:32:06.954 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:06.954 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/comment - 204 null null 0.3303ms
+2024-11-07 21:32:06.956 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5193/api/comment - application/json 28
+2024-11-07 21:32:06.956 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:06.961 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.CommentController.PostComment (SocialMediaApi)'
+2024-11-07 21:32:06.963 +01:00 [INF] Route matched with {action = "PostComment", controller = "Comment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SocialMediaApi.Models.Comment]] PostComment(SocialMediaApi.Models.CommentCreateDto) on controller SocialMediaApi.Controllers.CommentController (SocialMediaApi).
+2024-11-07 21:32:06.968 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2024-11-07 21:32:06.976 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Created", "t"."ImageUrl", "t"."LikesCount", "t"."Title", "t"."UserId", "t"."Id0", "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName"
+FROM (
+    SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id" AS "Id0", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+    FROM "Posts" AS "p"
+    LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+    WHERE "p"."Id" = @__id_0
+    LIMIT 1
+) AS "t"
+LEFT JOIN "Comments" AS "c" ON "t"."Id" = "c"."PostId"
+ORDER BY "t"."Id", "t"."Id0"
+2024-11-07 21:32:06.977 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 3), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Comments" ("Content", "Created", "PostId", "UserId")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-11-07 21:32:06.989 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'SocialMediaApi.Models.Comment'.
+2024-11-07 21:32:06.997 +01:00 [INF] Executed action SocialMediaApi.Controllers.CommentController.PostComment (SocialMediaApi) in 34.4785ms
+2024-11-07 21:32:06.997 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.CommentController.PostComment (SocialMediaApi)'
+2024-11-07 21:32:06.997 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5193/api/comment - 201 2045 application/json; charset=utf-8 41.7267ms
+2024-11-07 21:32:46.124 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5193/api/Auth/logout - null 0
+2024-11-07 21:32:46.124 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:46.124 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AuthController.Logout (SocialMediaApi)'
+2024-11-07 21:32:46.126 +01:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller SocialMediaApi.Controllers.AuthController (SocialMediaApi).
+2024-11-07 21:32:46.128 +01:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2024-11-07 21:32:46.128 +01:00 [INF] AuthenticationScheme: Identity.External signed out.
+2024-11-07 21:32:46.129 +01:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2024-11-07 21:32:46.129 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-07 21:32:46.129 +01:00 [INF] Executed action SocialMediaApi.Controllers.AuthController.Logout (SocialMediaApi) in 3.5291ms
+2024-11-07 21:32:46.129 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AuthController.Logout (SocialMediaApi)'
+2024-11-07 21:32:46.129 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5193/api/Auth/logout - 200 42 application/json; charset=utf-8 5.8198ms
+2024-11-07 21:32:46.144 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5193/api/post - null null
+2024-11-07 21:32:46.144 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:46.145 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5193/api/post - 204 null null 0.203ms
+2024-11-07 21:32:46.145 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/api/post - application/json null
+2024-11-07 21:32:46.146 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:46.146 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:32:46.146 +01:00 [INF] Route matched with {action = "GetAllPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPosts() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-07 21:32:46.147 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-07 21:32:46.148 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SocialMediaApi.Models.Post, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SocialMediaApi.Models.PostDto, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-07 21:32:46.149 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi) in 2.749ms
+2024-11-07 21:32:46.149 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:32:46.149 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/api/post - 200 1807 application/json; charset=utf-8 3.2801ms
+2024-11-07 21:32:46.149 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/api/post - application/json null
+2024-11-07 21:32:46.149 +01:00 [INF] CORS policy execution successful.
+2024-11-07 21:32:46.150 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:32:46.150 +01:00 [INF] Route matched with {action = "GetAllPosts", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPosts() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-07 21:32:46.151 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-07 21:32:46.151 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[SocialMediaApi.Models.Post, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[SocialMediaApi.Models.PostDto, SocialMediaApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-07 21:32:46.152 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi) in 1.8496ms
+2024-11-07 21:32:46.152 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.GetAllPosts (SocialMediaApi)'
+2024-11-07 21:32:46.152 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/api/post - 200 1807 application/json; charset=utf-8 2.3835ms
+2024-11-07 21:38:44.859 +01:00 [INF] Application is shutting down...
