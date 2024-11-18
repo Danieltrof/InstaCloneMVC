@@ -1,4 +1,4 @@
-@model IEnumerable<SocialMediaApi.Models.PostDto>
+@model IEnumerable<SocialMediaApi.ViewModels.PostViewModel>
 
 @{
     ViewData["Title"] = "Home";
@@ -11,13 +11,13 @@
             <div class="rounded-lg border border-border bg-card p-6 shadow-md">
                 <div class="mb-4 flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <span class="font-semibold text-foreground">@post.User.Username</span>
+                        <span class="font-semibold text-foreground">@post.UserName</span>
                         <span class="text-sm text-muted-foreground">
                             @post.Created.ToString("MMM dd, yyyy")
                         </span>
                     </div>
                     
-                    @if (User.Identity?.Name == post.User.Username)
+                    @if (User.Identity?.Name == post.UserName)
                     {
                         <div class="flex gap-2">
                             <button onclick="editPost(@post.Id)" class="rounded bg-primary px-3 py-1 text-sm text-primary-foreground hover:bg-primary/90">

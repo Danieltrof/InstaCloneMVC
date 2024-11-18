@@ -28,7 +28,5 @@ namespace SocialMediaApi.ViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; } = string.Empty;
-
-        public string? ReturnUrl { get; set; }
     }
 }

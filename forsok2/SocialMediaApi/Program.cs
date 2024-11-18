@@ -12,6 +12,8 @@ using SocialMediaApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add MVC services
+builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -34,12 +36,12 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromDays(30);
-    options.LoginPath = "/api/Auth/login";
-    options.LogoutPath = "/api/Auth/logout";
+    options.LoginPath = "/Account/Login";   
+    options.LogoutPath = "/Account/Logout";  
     options.SlidingExpiration = true;
 });
 
-// Register repository
+// Register repositories
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<ILikeRepository, LikeRepository>();
@@ -56,14 +58,14 @@ Log.Logger = new LoggerConfiguration()
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(Log.Logger);
 
-// Add CORS services
+// CORS services
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
             builder
-                .WithOrigins("http://localhost:3000") // Your frontend URL
+                .WithOrigins("http://localhost:3000")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials();
@@ -72,18 +74,32 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+Console.WriteLine("Application built successfully");
+
 if (app.Environment.IsDevelopment())
 {
+    Console.WriteLine("Seeding database...");
     DBInit.Seed(app);
+    Console.WriteLine("Database seeded successfully");
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Social Media API V1");
+    });
 }
 
+// Middleware pipeline
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseCors("AllowSpecificOrigin");
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
 
-app.Run();
+// MVC routing
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Post}/{action=Index}/{id?}");
+
+Console.WriteLine("Starting web server...");
+await app.RunAsync();

@@ -14,5 +14,12 @@ namespace SocialMediaApi.ViewModels
         public bool IsLikedByCurrentUser { get; set; }
         public List<CommentViewModel> Comments { get; set; } = new();
         public bool CanEdit { get; set; }
+        public UserViewModel User { get; set; } = new();
+    }
+
+    public class UserViewModel
+    {
+        public string Id { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
     }
 }

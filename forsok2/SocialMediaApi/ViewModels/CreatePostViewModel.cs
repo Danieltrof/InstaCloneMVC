@@ -13,8 +13,6 @@ namespace SocialMediaApi.ViewModels
         [Required(ErrorMessage = "Please select an image")]
         [Display(Name = "Upload Image")]
         public IFormFile? Image { get; set; }
-        public string? ErrorMessage { get; set; }
-        public string? ReturnUrl { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         public DateTime Created { get; set; }
         public string UserName { get; set; } = string.Empty;

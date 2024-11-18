@@ -13,7 +13,5 @@ namespace SocialMediaApi.ViewModels
         [StringLength(100, ErrorMessage = "Password must be at least 6 characters long.", MinimumLength = 6)]
         [Display(Name = "Password")]
         public string Password { get; set; } = string.Empty;
-
-        public string? ReturnUrl { get; set; }
     }
 }

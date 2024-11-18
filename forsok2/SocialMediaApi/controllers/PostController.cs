@@ -48,9 +48,19 @@ namespace SocialMediaApi.Controllers
                     Id = c.Id,
                     Content = c.Content,
                     UserName = c.User.Name,
-                    Created = c.Created
+                    Created = c.Created,
+                    User = new UserViewModel 
+                    { 
+                        Id = c.User.Id,
+                        Username = c.User.Name 
+                    }
                 }).ToList(),
-                CanEdit = currentUser?.Id == post.User.Id
+                CanEdit = currentUser?.Id == post.User.Id,
+                User = new UserViewModel 
+                { 
+                    Id = post.User.Id,
+                    Username = post.User.Name 
+                }
             }).ToList();
 
             return View(viewModels);

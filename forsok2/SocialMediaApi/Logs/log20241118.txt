@@ -1,0 +1,1332 @@
+2024-11-18 21:03:24.662 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:03:24.680 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:03:24.685 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:03:24.691 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:03:44.225 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:03:44.654 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:03:44.657 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:03:44.661 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:03:44.668 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:03:44.781 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:03:44.806 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:03:44.825 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:03:44.825 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:03:44.826 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:03:44.831 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:03:44.905 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:03:44.906 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:03:44.906 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:03:44.906 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:04:44.292 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:04:44.647 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:04:44.651 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:04:44.656 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:04:44.665 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:04:44.788 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:04:44.823 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:04:44.846 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:04:44.847 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:04:44.847 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:04:44.853 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:04:44.949 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:04:44.950 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:04:44.951 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:04:44.951 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:04:51.415 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 21:04:51.457 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 42.7074ms
+2024-11-18 21:04:51.471 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:04:51.472 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 1.2485ms
+2024-11-18 21:04:51.661 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:04:51.670 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.0954ms
+2024-11-18 21:04:51.672 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/favicon-32x32.png - null null
+2024-11-18 21:04:51.676 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-18 21:04:51.676 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/favicon-32x32.png - 200 628 image/png 4.7417ms
+2024-11-18 21:04:56.135 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/ - null null
+2024-11-18 21:04:56.136 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/ - 301 0 null 0.7663ms
+2024-11-18 21:04:56.137 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 21:04:56.138 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 0.5434ms
+2024-11-18 21:04:56.149 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:04:56.150 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.3626ms
+2024-11-18 21:04:56.197 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:04:56.198 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 0.467ms
+2024-11-18 21:05:01.353 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:05:01.354 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 0.7177ms
+2024-11-18 21:05:01.529 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/favicon.ico - null null
+2024-11-18 21:05:01.530 +01:00 [WRN] Failed to determine the https port for redirect.
+2024-11-18 21:05:01.541 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/favicon.ico - 404 0 null 12.3969ms
+2024-11-18 21:05:01.554 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5193/favicon.ico, Response status code: 404
+2024-11-18 21:05:06.086 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:05:06.086 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.3057ms
+2024-11-18 21:06:58.881 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:06:58.899 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:06:58.904 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:06:58.910 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:07:57.132 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:07:57.443 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:07:57.447 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:07:57.451 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:07:57.460 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:07:57.570 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:07:57.595 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:07:57.615 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:07:57.615 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:07:57.615 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:07:57.620 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:07:57.679 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:07:57.680 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:07:57.680 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:07:57.680 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:13:19.088 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:13:19.106 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:13:19.110 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:13:19.116 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:13:25.535 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:13:25.840 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:13:25.843 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:13:25.848 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:13:25.856 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:13:25.967 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:13:25.993 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:13:26.013 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:13:26.014 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:13:26.014 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:13:26.019 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:13:26.080 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:13:26.081 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:13:26.081 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:13:26.081 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:15:18.298 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:15:18.316 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:15:18.320 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:15:18.327 +01:00 [INF] Applying migration '20241118201508_InitialCreate'.
+2024-11-18 21:15:18.358 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20241118201508_InitialCreate', '8.0.8');
+2024-11-18 21:16:56.170 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:16:56.477 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:16:56.480 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:16:56.484 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:16:56.491 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:16:56.596 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:16:56.620 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:16:56.641 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:16:56.641 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:16:56.642 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:16:56.648 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:16:56.711 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:16:56.712 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:16:56.712 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:16:56.713 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:17:57.346 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:17:57.646 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:17:57.649 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:17:57.653 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:17:57.660 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:17:57.768 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:17:57.793 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:17:57.814 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:17:57.814 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:17:57.814 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:17:57.820 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:17:57.884 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:17:57.885 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:17:57.885 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:17:57.885 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:18:48.868 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/ - null null
+2024-11-18 21:18:48.876 +01:00 [WRN] Failed to determine the https port for redirect.
+2024-11-18 21:18:48.891 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/ - 404 0 null 24.588ms
+2024-11-18 21:18:48.893 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5193/, Response status code: 404
+2024-11-18 21:18:55.985 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 21:18:56.014 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 28.8386ms
+2024-11-18 21:18:56.219 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:18:56.229 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.1135ms
+2024-11-18 21:23:28.656 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 21:23:28.657 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 0.5914ms
+2024-11-18 21:23:28.856 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:23:28.857 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 0.5638ms
+2024-11-18 21:23:59.073 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 21:23:59.073 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 0.5226ms
+2024-11-18 21:23:59.277 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:23:59.278 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 0.3768ms
+2024-11-18 21:24:04.816 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 21:24:04.817 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 0.4201ms
+2024-11-18 21:26:12.663 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:26:12.963 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:26:12.965 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:26:12.969 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:26:12.976 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:26:13.083 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:26:13.107 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:26:13.128 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:26:13.128 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:26:13.128 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:26:13.135 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:26:13.198 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:26:13.199 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:26:13.199 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:26:13.199 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:28:24.994 +01:00 [INF] Application is shutting down...
+2024-11-18 21:28:28.724 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:28:29.034 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:28:29.037 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:28:29.041 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:28:29.048 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:28:29.152 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:28:29.176 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:28:29.196 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:28:29.197 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:28:29.197 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:28:29.203 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:28:29.278 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-18 21:28:29.288 +01:00 [INF] Now listening on: http://localhost:5234
+2024-11-18 21:28:29.288 +01:00 [INF] Now listening on: https://localhost:7234
+2024-11-18 21:28:29.289 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:28:29.289 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:28:29.289 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:29:05.265 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5234/ - null null
+2024-11-18 21:29:05.276 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5234/ - 307 0 null 9.852ms
+2024-11-18 21:29:38.348 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7234/ - null null
+2024-11-18 21:29:38.359 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7234/ - 404 0 null 11.2734ms
+2024-11-18 21:29:38.360 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7234/, Response status code: 404
+2024-11-18 21:46:11.527 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 21:46:11.839 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:46:11.842 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 21:46:11.846 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 21:46:11.853 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 21:46:11.968 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 21:46:11.994 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:46:12.015 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:46:12.016 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:46:12.016 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 21:46:12.021 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 21:46:12.094 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-18 21:46:12.106 +01:00 [INF] Now listening on: https://localhost:7088
+2024-11-18 21:46:12.106 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 21:46:12.107 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:46:12.108 +01:00 [INF] Hosting environment: Development
+2024-11-18 21:46:12.108 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 21:46:52.332 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 21:46:52.353 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 21:46:52.359 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 21:46:52.420 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-11-18 21:46:52.426 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 21:46:52.463 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 21:46:52.464 +01:00 [ERR] The view 'Index' was not found. Searched locations: ["/Views/Post/Index.cshtml","/Views/Shared/Index.cshtml"]
+2024-11-18 21:46:52.468 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 107.6933ms
+2024-11-18 21:46:52.469 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 21:46:52.470 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Index' was not found. The following locations were searched:
+/Views/Post/Index.cshtml
+/Views/Shared/Index.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 21:46:52.490 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 500 null text/html; charset=utf-8 159.0031ms
+2024-11-18 21:46:52.694 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/favicon.ico - null null
+2024-11-18 21:46:52.697 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/favicon.ico - 404 0 null 2.3935ms
+2024-11-18 21:46:52.697 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/favicon.ico, Response status code: 404
+2024-11-18 21:47:26.248 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger - null null
+2024-11-18 21:47:26.249 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger - 301 0 null 1.0366ms
+2024-11-18 21:47:26.251 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/index.html - null null
+2024-11-18 21:47:26.279 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/index.html - 200 null text/html;charset=utf-8 27.3693ms
+2024-11-18 21:47:26.286 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/swagger-ui.css - null null
+2024-11-18 21:47:26.290 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/swagger-ui-bundle.js - null null
+2024-11-18 21:47:26.290 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/swagger-ui-standalone-preset.js - null null
+2024-11-18 21:47:26.292 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-11-18 21:47:26.293 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/swagger-ui.css - 200 143943 text/css 6.5442ms
+2024-11-18 21:47:26.298 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-11-18 21:47:26.299 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 8.2036ms
+2024-11-18 21:47:26.307 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-11-18 21:47:26.307 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 17.2004ms
+2024-11-18 21:47:26.440 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/v1/swagger.json - null null
+2024-11-18 21:47:26.448 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.7854ms
+2024-11-18 21:47:26.449 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/swagger/favicon-32x32.png - null null
+2024-11-18 21:47:26.449 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-18 21:47:26.449 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/swagger/favicon-32x32.png - 200 628 image/png 0.3019ms
+2024-11-18 22:04:30.642 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 22:04:30.957 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:04:30.960 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:04:30.964 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 22:04:30.971 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 22:04:31.085 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 22:04:31.112 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:04:31.133 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:04:31.133 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:04:31.133 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:04:31.139 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 22:04:31.210 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-18 22:04:31.222 +01:00 [INF] Now listening on: https://localhost:7088
+2024-11-18 22:04:31.222 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 22:04:31.223 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 22:04:31.224 +01:00 [INF] Hosting environment: Development
+2024-11-18 22:04:31.224 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 22:04:51.710 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post - null null
+2024-11-18 22:04:51.732 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:04:51.737 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:04:51.790 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-11-18 22:04:51.795 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:04:51.845 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:04:51.868 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 129.012ms
+2024-11-18 22:04:51.869 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:04:51.869 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A view component named 'Navbar' could not be found. A view component must be a public non-abstract class, not contain any generic parameters, and either be decorated with 'ViewComponentAttribute' or have a class name ending with the 'ViewComponent' suffix. A view component must not be decorated with 'NonViewComponentAttribute'.
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(String name, Object arguments)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__16_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 22:04:51.893 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post - 500 null text/html; charset=utf-8 183.8436ms
+2024-11-18 22:05:58.492 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post - null null
+2024-11-18 22:05:58.496 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:05:58.496 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:05:58.531 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:05:58.532 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:05:58.534 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 38.0374ms
+2024-11-18 22:05:58.534 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:05:58.534 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A view component named 'Navbar' could not be found. A view component must be a public non-abstract class, not contain any generic parameters, and either be decorated with 'ViewComponentAttribute' or have a class name ending with the 'ViewComponent' suffix. A view component must not be decorated with 'NonViewComponentAttribute'.
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(String name, Object arguments)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__16_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 22:05:58.538 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post - 500 null text/html; charset=utf-8 46.1875ms
+2024-11-18 22:06:00.793 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post - null null
+2024-11-18 22:06:00.795 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:00.795 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:06:00.803 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:06:00.803 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:06:00.804 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 9.1918ms
+2024-11-18 22:06:00.804 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:00.804 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A view component named 'Navbar' could not be found. A view component must be a public non-abstract class, not contain any generic parameters, and either be decorated with 'ViewComponentAttribute' or have a class name ending with the 'ViewComponent' suffix. A view component must not be decorated with 'NonViewComponentAttribute'.
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(String name, Object arguments)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__16_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 22:06:00.806 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post - 500 null text/html; charset=utf-8 12.9899ms
+2024-11-18 22:06:04.348 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post - null null
+2024-11-18 22:06:04.349 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:04.349 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:06:04.351 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:06:04.352 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:06:04.352 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 3.3412ms
+2024-11-18 22:06:04.352 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:04.353 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A view component named 'Navbar' could not be found. A view component must be a public non-abstract class, not contain any generic parameters, and either be decorated with 'ViewComponentAttribute' or have a class name ending with the 'ViewComponent' suffix. A view component must not be decorated with 'NonViewComponentAttribute'.
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(String name, Object arguments)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__16_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 22:06:04.355 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post - 500 null text/html; charset=utf-8 6.2811ms
+2024-11-18 22:06:18.466 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/index.html - null null
+2024-11-18 22:06:18.491 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/index.html - 200 null text/html;charset=utf-8 25.8609ms
+2024-11-18 22:06:18.769 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - null null
+2024-11-18 22:06:18.777 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5193/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.6747ms
+2024-11-18 22:06:21.940 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post - null null
+2024-11-18 22:06:21.941 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:21.941 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:06:21.942 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:06:21.943 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:06:21.944 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 3.3127ms
+2024-11-18 22:06:21.944 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:06:21.945 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A view component named 'Navbar' could not be found. A view component must be a public non-abstract class, not contain any generic parameters, and either be decorated with 'ViewComponentAttribute' or have a class name ending with the 'ViewComponent' suffix. A view component must not be decorated with 'NonViewComponentAttribute'.
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeAsync(String name, Object arguments)
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.<ExecuteAsync>b__16_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 22:06:21.949 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post - 500 null text/html; charset=utf-8 8.6335ms
+2024-11-18 22:12:09.920 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 22:12:10.238 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:12:10.241 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:12:10.245 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 22:12:10.252 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 22:12:10.364 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 22:12:10.395 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:12:10.417 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:12:10.418 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:12:10.418 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:12:10.424 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 22:12:10.495 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-18 22:12:10.507 +01:00 [INF] Now listening on: https://localhost:7088
+2024-11-18 22:12:10.507 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 22:12:10.508 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 22:12:10.509 +01:00 [INF] Hosting environment: Development
+2024-11-18 22:12:10.509 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 22:12:35.967 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:12:35.991 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:12:35.997 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:12:36.047 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-11-18 22:12:36.052 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:12:36.092 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:12:36.123 +01:00 [INF] Executed ViewResult - view Index executed in 30.7595ms.
+2024-11-18 22:12:36.125 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 127.7335ms
+2024-11-18 22:12:36.125 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:12:36.129 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 162.2243ms
+2024-11-18 22:12:36.137 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:12:36.140 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 3.4345ms
+2024-11-18 22:12:36.141 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/sunset.webp - null null
+2024-11-18 22:12:36.141 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/poost.webp - null null
+2024-11-18 22:12:36.141 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:12:36.143 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/cat.webp - null null
+2024-11-18 22:12:36.148 +01:00 [INF] Sending file. Request path: '/uploads/cat.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\cat.webp'
+2024-11-18 22:12:36.148 +01:00 [INF] Sending file. Request path: '/uploads/poost.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\poost.webp'
+2024-11-18 22:12:36.148 +01:00 [INF] Sending file. Request path: '/uploads/sunset.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\sunset.webp'
+2024-11-18 22:12:36.148 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/poost.webp - 200 6430 image/webp 7.1046ms
+2024-11-18 22:12:36.148 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/cat.webp - 200 24784 image/webp 5.1572ms
+2024-11-18 22:12:36.148 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/sunset.webp - 200 47170 image/webp 7.1551ms
+2024-11-18 22:12:53.464 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7088/ - application/x-www-form-urlencoded 0
+2024-11-18 22:12:53.465 +01:00 [INF] CORS policy execution failed.
+2024-11-18 22:12:53.465 +01:00 [INF] Request origin https://localhost:7088 does not have permission to access the resource.
+2024-11-18 22:12:53.467 +01:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-11-18 22:12:53.467 +01:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-11-18 22:12:53.467 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7088/ - 405 0 null 2.9817ms
+2024-11-18 22:13:06.696 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:13:06.696 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:13:06.696 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:13:06.731 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:13:06.733 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:13:06.736 +01:00 [INF] Executed ViewResult - view Index executed in 3.0244ms.
+2024-11-18 22:13:06.736 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 39.8139ms
+2024-11-18 22:13:06.736 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:13:06.736 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 40.5775ms
+2024-11-18 22:13:06.752 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:06.753 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 1.0822ms
+2024-11-18 22:13:06.753 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:06.754 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/poost.webp - null null
+2024-11-18 22:13:06.754 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/sunset.webp - null null
+2024-11-18 22:13:06.754 +01:00 [INF] Sending file. Request path: '/uploads/poost.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\poost.webp'
+2024-11-18 22:13:06.754 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/poost.webp - 200 6430 image/webp 0.8674ms
+2024-11-18 22:13:06.755 +01:00 [INF] Sending file. Request path: '/uploads/sunset.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\sunset.webp'
+2024-11-18 22:13:06.755 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/sunset.webp - 200 47170 image/webp 1.0362ms
+2024-11-18 22:13:06.755 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/cat.webp - null null
+2024-11-18 22:13:06.756 +01:00 [INF] Sending file. Request path: '/uploads/cat.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\cat.webp'
+2024-11-18 22:13:06.756 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/cat.webp - 200 24784 image/webp 0.576ms
+2024-11-18 22:13:08.872 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Register - null null
+2024-11-18 22:13:08.872 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:08.875 +01:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:08.885 +01:00 [INF] Executing ViewResult, running view Register.
+2024-11-18 22:13:08.887 +01:00 [INF] Executed ViewResult - view Register executed in 2.7558ms.
+2024-11-18 22:13:08.887 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi) in 11.8033ms
+2024-11-18 22:13:08.887 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:08.887 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Register - 200 null text/html; charset=utf-8 15.7998ms
+2024-11-18 22:13:08.896 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:08.897 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.3368ms
+2024-11-18 22:13:08.897 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:10.587 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Login - null null
+2024-11-18 22:13:10.587 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:10.589 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:10.590 +01:00 [INF] Executing ViewResult, running view Login.
+2024-11-18 22:13:10.591 +01:00 [INF] Executed ViewResult - view Login executed in 1.7967ms.
+2024-11-18 22:13:10.591 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi) in 2.6244ms
+2024-11-18 22:13:10.591 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:10.591 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Login - 200 null text/html; charset=utf-8 4.4766ms
+2024-11-18 22:13:10.601 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:10.602 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.3136ms
+2024-11-18 22:13:10.602 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:14.624 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Register - null null
+2024-11-18 22:13:14.624 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:14.624 +01:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:14.624 +01:00 [INF] Executing ViewResult, running view Register.
+2024-11-18 22:13:14.625 +01:00 [INF] Executed ViewResult - view Register executed in 0.8411ms.
+2024-11-18 22:13:14.625 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi) in 1.1809ms
+2024-11-18 22:13:14.625 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:14.625 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Register - 200 null text/html; charset=utf-8 1.5773ms
+2024-11-18 22:13:14.636 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:14.636 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.3173ms
+2024-11-18 22:13:14.636 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:15.094 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Login - null null
+2024-11-18 22:13:15.094 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:15.094 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:15.095 +01:00 [INF] Executing ViewResult, running view Login.
+2024-11-18 22:13:15.096 +01:00 [INF] Executed ViewResult - view Login executed in 0.8566ms.
+2024-11-18 22:13:15.096 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi) in 1.2932ms
+2024-11-18 22:13:15.096 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:15.096 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Login - 200 null text/html; charset=utf-8 1.6741ms
+2024-11-18 22:13:15.106 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:15.107 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.323ms
+2024-11-18 22:13:15.107 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:16.617 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:13:16.617 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:13:16.617 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:13:16.619 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:13:16.620 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:13:16.621 +01:00 [INF] Executed ViewResult - view Index executed in 0.8661ms.
+2024-11-18 22:13:16.621 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 3.8828ms
+2024-11-18 22:13:16.621 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:13:16.621 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 4.2411ms
+2024-11-18 22:13:16.631 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:16.631 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.3006ms
+2024-11-18 22:13:16.631 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:32.695 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Home/Index - null null
+2024-11-18 22:13:32.695 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Home/Index - 404 0 null 0.2023ms
+2024-11-18 22:13:32.696 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/Home/Index, Response status code: 404
+2024-11-18 22:13:36.076 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Post/Create - null null
+2024-11-18 22:13:36.078 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-11-18 22:13:36.079 +01:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2024-11-18 22:13:36.079 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Post/Create - 302 0 null 3.3183ms
+2024-11-18 22:13:36.081 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Login?ReturnUrl=%2FPost%2FCreate - null null
+2024-11-18 22:13:36.081 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:36.081 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:36.083 +01:00 [INF] Executing ViewResult, running view Login.
+2024-11-18 22:13:36.084 +01:00 [INF] Executed ViewResult - view Login executed in 0.6632ms.
+2024-11-18 22:13:36.084 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi) in 2.9474ms
+2024-11-18 22:13:36.084 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:36.084 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Login?ReturnUrl=%2FPost%2FCreate - 200 null text/html; charset=utf-8 3.2372ms
+2024-11-18 22:13:36.093 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:36.093 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.2859ms
+2024-11-18 22:13:36.093 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:37.834 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Home/Index - null null
+2024-11-18 22:13:37.835 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Home/Index - 404 0 null 0.2623ms
+2024-11-18 22:13:37.835 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/Home/Index, Response status code: 404
+2024-11-18 22:13:39.849 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Login - null null
+2024-11-18 22:13:39.849 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:39.849 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:39.849 +01:00 [INF] Executing ViewResult, running view Login.
+2024-11-18 22:13:39.850 +01:00 [INF] Executed ViewResult - view Login executed in 0.3996ms.
+2024-11-18 22:13:39.850 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi) in 0.8478ms
+2024-11-18 22:13:39.850 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:13:39.850 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Login - 200 null text/html; charset=utf-8 1.1543ms
+2024-11-18 22:13:39.859 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:39.860 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.5212ms
+2024-11-18 22:13:39.860 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:13:41.089 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Register - null null
+2024-11-18 22:13:41.089 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:41.089 +01:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:13:41.090 +01:00 [INF] Executing ViewResult, running view Register.
+2024-11-18 22:13:41.090 +01:00 [INF] Executed ViewResult - view Register executed in 0.7123ms.
+2024-11-18 22:13:41.090 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi) in 1.033ms
+2024-11-18 22:13:41.090 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:13:41.090 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Register - 200 null text/html; charset=utf-8 1.4257ms
+2024-11-18 22:13:41.101 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - null null
+2024-11-18 22:13:41.101 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/_Layout.cshtml.css - 404 0 null 0.2875ms
+2024-11-18 22:13:41.101 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7088/css/_Layout.cshtml.css, Response status code: 404
+2024-11-18 22:17:16.631 +01:00 [INF] User profile is available. Using 'C:\Users\danil\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-18 22:17:16.961 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:17:16.964 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-11-18 22:17:16.969 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-18 22:17:16.976 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-18 22:17:17.096 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2024-11-18 22:17:17.123 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:17:17.144 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:17:17.145 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:17:17.145 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2024-11-18 22:17:17.151 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Posts" AS "p")
+2024-11-18 22:17:17.228 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-18 22:17:17.241 +01:00 [INF] Now listening on: https://localhost:7088
+2024-11-18 22:17:17.241 +01:00 [INF] Now listening on: http://localhost:5193
+2024-11-18 22:17:17.242 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 22:17:17.242 +01:00 [INF] Hosting environment: Development
+2024-11-18 22:17:17.242 +01:00 [INF] Content root path: C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi
+2024-11-18 22:17:27.169 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:17:27.192 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:27.198 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:17:27.249 +01:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-11-18 22:17:27.255 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:17:27.295 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:17:27.325 +01:00 [INF] Executed ViewResult - view Index executed in 30.2544ms.
+2024-11-18 22:17:27.327 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 128.9742ms
+2024-11-18 22:17:27.327 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:27.331 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 162.1491ms
+2024-11-18 22:17:27.338 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:17:27.341 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/poost.webp - null null
+2024-11-18 22:17:27.341 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/sunset.webp - null null
+2024-11-18 22:17:27.343 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\css\site.css'
+2024-11-18 22:17:27.344 +01:00 [INF] Sending file. Request path: '/uploads/sunset.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\sunset.webp'
+2024-11-18 22:17:27.344 +01:00 [INF] Sending file. Request path: '/uploads/poost.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\poost.webp'
+2024-11-18 22:17:27.344 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 200 3821 text/css 5.8557ms
+2024-11-18 22:17:27.344 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/sunset.webp - 200 47170 image/webp 2.9873ms
+2024-11-18 22:17:27.344 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/poost.webp - 200 6430 image/webp 3.0214ms
+2024-11-18 22:17:27.345 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/cat.webp - null null
+2024-11-18 22:17:27.345 +01:00 [INF] Sending file. Request path: '/uploads/cat.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\cat.webp'
+2024-11-18 22:17:27.346 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/cat.webp - 200 24784 image/webp 0.6575ms
+2024-11-18 22:17:48.084 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:17:48.085 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:48.085 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:17:48.120 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:17:48.121 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:17:48.124 +01:00 [INF] Executed ViewResult - view Index executed in 2.8124ms.
+2024-11-18 22:17:48.124 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 38.3255ms
+2024-11-18 22:17:48.124 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:48.124 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 39.8446ms
+2024-11-18 22:17:48.130 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:17:48.132 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\css\site.css'
+2024-11-18 22:17:48.132 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 200 3322 text/css 1.1855ms
+2024-11-18 22:17:56.877 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:17:56.878 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:56.878 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:17:56.887 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:17:56.888 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:17:56.889 +01:00 [INF] Executed ViewResult - view Index executed in 0.8906ms.
+2024-11-18 22:17:56.889 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 10.4762ms
+2024-11-18 22:17:56.889 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:56.889 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 12.6096ms
+2024-11-18 22:17:56.895 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:17:56.896 +01:00 [INF] The file /css/site.css was not modified
+2024-11-18 22:17:56.896 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 304 null text/css 1.0602ms
+2024-11-18 22:17:57.658 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:17:57.659 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:57.659 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:17:57.661 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:17:57.662 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:17:57.663 +01:00 [INF] Executed ViewResult - view Index executed in 0.9848ms.
+2024-11-18 22:17:57.663 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 4.0376ms
+2024-11-18 22:17:57.663 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:17:57.663 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 4.9007ms
+2024-11-18 22:17:57.670 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:17:57.670 +01:00 [INF] The file /css/site.css was not modified
+2024-11-18 22:17:57.671 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 304 null text/css 0.3247ms
+2024-11-18 22:18:07.213 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7088/ - application/x-www-form-urlencoded 0
+2024-11-18 22:18:07.214 +01:00 [INF] CORS policy execution failed.
+2024-11-18 22:18:07.214 +01:00 [INF] Request origin https://localhost:7088 does not have permission to access the resource.
+2024-11-18 22:18:07.214 +01:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-11-18 22:18:07.214 +01:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-11-18 22:18:07.215 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7088/ - 405 0 null 2.0033ms
+2024-11-18 22:18:12.232 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/ - null null
+2024-11-18 22:18:12.232 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:18:12.232 +01:00 [INF] Route matched with {action = "Index", controller = "Post"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller SocialMediaApi.Controllers.PostController (SocialMediaApi).
+2024-11-18 22:18:12.234 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Created", "p"."ImageUrl", "p"."LikesCount", "p"."Title", "p"."UserId", "a"."Id", "t"."Id", "t"."Content", "t"."Created", "t"."PostId", "t"."UserId", "t"."Id0", "t"."AccessFailedCount", "t"."ConcurrencyStamp", "t"."Email", "t"."EmailConfirmed", "t"."LockoutEnabled", "t"."LockoutEnd", "t"."Name", "t"."NormalizedEmail", "t"."NormalizedUserName", "t"."PasswordHash", "t"."PhoneNumber", "t"."PhoneNumberConfirmed", "t"."SecurityStamp", "t"."TwoFactorEnabled", "t"."UserName", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "t0"."Id", "t0"."PostId", "t0"."UserId", "t0"."Id0", "t0"."AccessFailedCount", "t0"."ConcurrencyStamp", "t0"."Email", "t0"."EmailConfirmed", "t0"."LockoutEnabled", "t0"."LockoutEnd", "t0"."Name", "t0"."NormalizedEmail", "t0"."NormalizedUserName", "t0"."PasswordHash", "t0"."PhoneNumber", "t0"."PhoneNumberConfirmed", "t0"."SecurityStamp", "t0"."TwoFactorEnabled", "t0"."UserName"
+FROM "Posts" AS "p"
+LEFT JOIN "AspNetUsers" AS "a" ON "p"."UserId" = "a"."Id"
+LEFT JOIN (
+    SELECT "c"."Id", "c"."Content", "c"."Created", "c"."PostId", "c"."UserId", "a0"."Id" AS "Id0", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."Name", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+    FROM "Comments" AS "c"
+    LEFT JOIN "AspNetUsers" AS "a0" ON "c"."UserId" = "a0"."Id"
+) AS "t" ON "p"."Id" = "t"."PostId"
+LEFT JOIN (
+    SELECT "l"."Id", "l"."PostId", "l"."UserId", "a1"."Id" AS "Id0", "a1"."AccessFailedCount", "a1"."ConcurrencyStamp", "a1"."Email", "a1"."EmailConfirmed", "a1"."LockoutEnabled", "a1"."LockoutEnd", "a1"."Name", "a1"."NormalizedEmail", "a1"."NormalizedUserName", "a1"."PasswordHash", "a1"."PhoneNumber", "a1"."PhoneNumberConfirmed", "a1"."SecurityStamp", "a1"."TwoFactorEnabled", "a1"."UserName"
+    FROM "Likes" AS "l"
+    LEFT JOIN "AspNetUsers" AS "a1" ON "l"."UserId" = "a1"."Id"
+) AS "t0" ON "p"."Id" = "t0"."PostId"
+ORDER BY "p"."Id", "a"."Id", "t"."Id", "t"."Id0", "t0"."Id"
+2024-11-18 22:18:12.235 +01:00 [INF] Executing ViewResult, running view Index.
+2024-11-18 22:18:12.236 +01:00 [INF] Executed ViewResult - view Index executed in 0.5643ms.
+2024-11-18 22:18:12.236 +01:00 [INF] Executed action SocialMediaApi.Controllers.PostController.Index (SocialMediaApi) in 3.2119ms
+2024-11-18 22:18:12.236 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.PostController.Index (SocialMediaApi)'
+2024-11-18 22:18:12.236 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/ - 200 null text/html; charset=utf-8 3.7821ms
+2024-11-18 22:18:12.246 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:18:12.247 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\css\site.css'
+2024-11-18 22:18:12.247 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/poost.webp - null null
+2024-11-18 22:18:12.247 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 200 3322 text/css 1.2455ms
+2024-11-18 22:18:12.248 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/sunset.webp - null null
+2024-11-18 22:18:12.248 +01:00 [INF] Sending file. Request path: '/uploads/poost.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\poost.webp'
+2024-11-18 22:18:12.248 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/poost.webp - 200 6430 image/webp 0.8268ms
+2024-11-18 22:18:12.249 +01:00 [INF] Sending file. Request path: '/uploads/sunset.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\sunset.webp'
+2024-11-18 22:18:12.249 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/sunset.webp - 200 47170 image/webp 1.2049ms
+2024-11-18 22:18:12.253 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/uploads/cat.webp - null null
+2024-11-18 22:18:12.253 +01:00 [INF] Sending file. Request path: '/uploads/cat.webp'. Physical path: 'C:\Users\danil\OneDrive\Documents\GitHub\InstaCloneMVC\forsok2\SocialMediaApi\wwwroot\uploads\cat.webp'
+2024-11-18 22:18:12.253 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/uploads/cat.webp - 200 24784 image/webp 0.8808ms
+2024-11-18 22:18:15.806 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Login - null null
+2024-11-18 22:18:15.807 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:18:15.812 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:18:15.816 +01:00 [INF] Executing ViewResult, running view Login.
+2024-11-18 22:18:15.817 +01:00 [INF] Executed ViewResult - view Login executed in 2.1692ms.
+2024-11-18 22:18:15.817 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi) in 5.2657ms
+2024-11-18 22:18:15.817 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Login (SocialMediaApi)'
+2024-11-18 22:18:15.817 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Login - 200 null text/html; charset=utf-8 11.4064ms
+2024-11-18 22:18:15.826 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:18:15.826 +01:00 [INF] The file /css/site.css was not modified
+2024-11-18 22:18:15.826 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 304 null text/css 0.359ms
+2024-11-18 22:18:19.925 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/Account/Register - null null
+2024-11-18 22:18:19.926 +01:00 [INF] Executing endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:18:19.927 +01:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(System.String) on controller SocialMediaApi.Controllers.AccountController (SocialMediaApi).
+2024-11-18 22:18:19.928 +01:00 [INF] Executing ViewResult, running view Register.
+2024-11-18 22:18:19.930 +01:00 [INF] Executed ViewResult - view Register executed in 2.3162ms.
+2024-11-18 22:18:19.930 +01:00 [INF] Executed action SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi) in 3.3944ms
+2024-11-18 22:18:19.930 +01:00 [INF] Executed endpoint 'SocialMediaApi.Controllers.AccountController.Register (SocialMediaApi)'
+2024-11-18 22:18:19.930 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/Account/Register - 200 null text/html; charset=utf-8 5.8855ms
+2024-11-18 22:18:19.939 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7088/css/site.css - null null
+2024-11-18 22:18:19.939 +01:00 [INF] The file /css/site.css was not modified
+2024-11-18 22:18:19.939 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7088/css/site.css - 304 null text/css 0.4972ms

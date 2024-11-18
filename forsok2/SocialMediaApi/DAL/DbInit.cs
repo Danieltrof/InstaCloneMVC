@@ -9,18 +9,32 @@ public static class DBInit
 {
     public static void Seed(WebApplication app)
     {
-        using (var scope = app.Services.CreateScope())
+        try
         {
-            var services = scope.ServiceProvider;
-            var context = services.GetRequiredService<ApplicationDbContext>();
-            var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<ApplicationDbContext>();
+                var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-            context.Database.Migrate();
+                Console.WriteLine("Starting database migration...");
+                context.Database.Migrate();
+                Console.WriteLine("Migration completed");
 
-            SeedRoles(roleManager).Wait();
-            SeedUsers(userManager).Wait();
-            SeedPosts(context, userManager).Wait();
+                Console.WriteLine("Seeding roles...");
+                SeedRoles(roleManager).Wait();
+                Console.WriteLine("Seeding users...");
+                SeedUsers(userManager).Wait();
+                Console.WriteLine("Seeding posts...");
+                SeedPosts(context, userManager).Wait();
+                Console.WriteLine("Seeding completed");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred during seeding: {ex.Message}");
+            Console.WriteLine(ex.StackTrace);
         }
     }
 
