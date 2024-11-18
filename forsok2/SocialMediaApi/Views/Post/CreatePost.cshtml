@@ -4,16 +4,30 @@
     ViewData["Title"] = "Create Post";
 }
 
-<h1>Create Post</h1>
+<div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-lg">
+        <h1 class="mb-6 text-center text-2xl font-bold text-foreground">Create a New Post</h1>
+        
+        <form asp-controller="Post" asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label asp-for="Title" class="mb-2 block text-sm font-medium text-foreground">Title</label>
+                <input asp-for="Title" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" 
+                       required minlength="3" maxlength="100" />
+                <span asp-validation-for="Title" class="text-sm text-destructive"></span>
+            </div>
 
-<form method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="Title">Title</label>
-        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
+            <div class="mb-6">
+                <label asp-for="Image" class="mb-2 block text-sm font-medium text-foreground">Upload Image</label>
+                <input asp-for="Image" type="file" accept="image/*" 
+                       class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Image" class="text-sm text-destructive"></span>
+            </div>
+
+            <div class="mb-6">
+                <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                    Create Post
+                </button>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="Image">Upload Image</label>
-        <input type="file" class="form-control-file" id="Image" name="Image" />
-    </div>
-    <button type="submit" class="btn btn-primary">Create Post</button>
-</form>
+</div>

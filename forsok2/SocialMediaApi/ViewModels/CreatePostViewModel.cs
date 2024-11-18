@@ -5,11 +5,23 @@ namespace SocialMediaApi.ViewModels
 {
     public class CreatePostViewModel : BaseViewModel
     {
-        [Required]
-        [StringLength(100, ErrorMessage = "The title must be between 1 and 100 characters.", MinimumLength = 1)]
-        public new required string Title { get; set; }
+        public int Id { get; set; }
+        [Required(ErrorMessage = "Title is required")]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Title must be between 3 and 100 characters")]
+        public string Title { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Please upload an image.")]
+        [Required(ErrorMessage = "Please select an image")]
+        [Display(Name = "Upload Image")]
         public IFormFile? Image { get; set; }
+        public string? ErrorMessage { get; set; }
+        public string? ReturnUrl { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
+        public DateTime Created { get; set; }
+        public string UserName { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
+        public int LikesCount { get; set; }
+        public bool IsLikedByCurrentUser { get; set; }
+        public List<CommentViewModel> Comments { get; set; } = new();
+        public bool CanEdit { get; set; }
     }
 }

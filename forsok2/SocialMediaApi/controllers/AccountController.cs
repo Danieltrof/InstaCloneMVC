@@ -1,99 +1,100 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using SocialMediaApi.Models;
 using SocialMediaApi.ViewModels;
-using Microsoft.AspNetCore.Identity;
+using SocialMediaApi.Repositories;
 
-namespace SocialMediaApi.Controllers{
-public class AccountController : BaseController
+namespace SocialMediaApi.Controllers
 {
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
-
-    public AccountController(
-        UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager)
+    public class AccountController : Controller
     {
-        _userManager = userManager;
-        _signInManager = signInManager;
-    }
+        private readonly IAuthRepository _authRepository;
+        private readonly ILogger<AccountController> _logger;
 
-    public IActionResult Login()
-    {
-        var viewModel = new LoginViewModel
+        public AccountController(
+            IAuthRepository authRepository,
+            ILogger<AccountController> logger)
         {
-            Email = "",
-            Password = ""
-        };
-        SetLayoutData(viewModel);
-        return View(viewModel);
-    }
+            _authRepository = authRepository;
+            _logger = logger;
+        }
 
-    [HttpGet]
-    public IActionResult Register()
-    {
-        var viewModel = new RegisterViewModel
+        [HttpGet]
+        public IActionResult Login(string? returnUrl = null)
         {
-            Username = "",
-            Email = "",
-            Password = "",
-            FullName = "",
-            ConfirmPassword = ""
-        };
-        SetLayoutData(viewModel);
-        return View(viewModel);
-    }
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
+        }
 
-    [HttpPost]
-    public async Task<IActionResult> Register(RegisterViewModel model)
-    {
-        if (!ModelState.IsValid)
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            SetLayoutData(model);
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var result = await _authRepository.PasswordSignInAsync(
+                model.Email, 
+                model.Password, 
+                isPersistent: false, 
+                lockoutOnFailure: false);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User logged in successfully.");
+                return RedirectToLocal(model.ReturnUrl);
+            }
+
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             return View(model);
         }
 
-        var user = new ApplicationUser
+        [HttpGet]
+        public IActionResult Register(string? returnUrl = null)
         {
-            UserName = model.Username,
-            Email = model.Email,
-            Name = model.FullName
-        };
-
-        var result = await _userManager.CreateAsync(user, model.Password);
-        if (result.Succeeded)
-        {
-            await _signInManager.SignInAsync(user, isPersistent: false);
-            return RedirectToAction("Index", "Home");
+            return View(new RegisterViewModel { ReturnUrl = returnUrl });
         }
 
-        foreach (var error in result.Errors)
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            ModelState.AddModelError(string.Empty, error.Description);
-        }
+            if (!ModelState.IsValid)
+                return View(model);
 
-        SetLayoutData(model);
-        return View(model);
-    }
+            var user = new ApplicationUser
+            {
+                UserName = model.Username,
+                Email = model.Email,
+                Name = model.FullName
+            };
 
-    [HttpPost]
-    public async Task<IActionResult> Login(LoginViewModel model)
-    {
-        if (!ModelState.IsValid)
-        {
-            SetLayoutData(model);
+            var result = await _authRepository.CreateUserAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User created a new account with password.");
+                await _authRepository.SignInAsync(user, isPersistent: false);
+                return RedirectToLocal(model.ReturnUrl);
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
             return View(model);
         }
 
-        var result = await _signInManager.PasswordSignInAsync(
-            model.Email, model.Password, isPersistent: false, lockoutOnFailure: false);
-
-        if (result.Succeeded)
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _authRepository.SignOutAsync();
+            _logger.LogInformation("User logged out.");
             return RedirectToAction("Index", "Home");
+        }
 
-        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-        SetLayoutData(model);
-        return View(model);
+        private IActionResult RedirectToLocal(string? returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
+            return RedirectToAction("Index", "Home");
+        }
     }
-}
 }

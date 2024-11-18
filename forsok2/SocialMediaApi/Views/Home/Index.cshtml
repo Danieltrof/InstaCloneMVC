@@ -1,34 +1,93 @@
-@model List<SocialMediaApi.ViewModels.PostViewModel>
+@model IEnumerable<SocialMediaApi.Models.PostDto>
 
-<div class="container mx-auto px-4">
-    <h1 class="text-2xl font-bold mb-6">Feed</h1>
+@{
+    ViewData["Title"] = "Home";
+}
 
-    @foreach (var post in Model)
-    {
-        <div class="bg-card rounded-lg shadow-md mb-6 p-4">
-            <h2 class="text-xl font-semibold mb-2">@post.Title</h2>
-            <img src="@post.ImageUrl" alt="Post Image" class="w-full rounded-md mb-4" />
-            <p class="text-muted-foreground">
-                Posted by @post.UserName on @post.Created.ToString("MMM dd, yyyy")
-            </p>
-            <div class="mt-4">
-                <span class="text-muted-foreground">@post.LikesCount likes</span>
-            </div>
-            @if (post.Comments.Any())
-            {
-                <div class="mt-4 border-t pt-4">
-                    <h3 class="font-semibold mb-2">Comments</h3>
-                    @foreach (var comment in post.Comments)
+<div class="container mx-auto px-4 py-8">
+    <div class="grid gap-8">
+        @foreach (var post in Model.OrderByDescending(p => p.Created))
+        {
+            <div class="rounded-lg border border-border bg-card p-6 shadow-md">
+                <div class="mb-4 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="font-semibold text-foreground">@post.User.Username</span>
+                        <span class="text-sm text-muted-foreground">
+                            @post.Created.ToString("MMM dd, yyyy")
+                        </span>
+                    </div>
+                    
+                    @if (User.Identity?.Name == post.User.Username)
                     {
-                        <div class="mb-2">
-                            <p class="text-sm">
-                                <span class="font-semibold">@comment.UserName:</span>
-                                @comment.Content
-                            </p>
+                        <div class="flex gap-2">
+                            <button onclick="editPost(@post.Id)" class="rounded bg-primary px-3 py-1 text-sm text-primary-foreground hover:bg-primary/90">
+                                Edit
+                            </button>
+                            <form asp-controller="Post" asp-action="Delete" asp-route-id="@post.Id" method="post" class="inline">
+                                <button type="submit" class="rounded bg-destructive px-3 py-1 text-sm text-destructive-foreground hover:bg-destructive/90">
+                                    Delete
+                                </button>
+                            </form>
                         </div>
                     }
                 </div>
-            }
-        </div>
-    }
+
+                <h2 class="mb-4 text-xl font-semibold text-foreground">@post.Title</h2>
+                
+                <img src="@post.ImageUrl" alt="@post.Title" class="mb-4 w-full rounded-lg object-cover" />
+                
+                <div class="mb-4 flex items-center gap-4">
+                    <form asp-controller="Post" asp-action="Like" asp-route-id="@post.Id" method="post" class="inline">
+                        <button type="submit" class="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+                            <span>❤️</span>
+                            <span>@post.LikesCount</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-4">
+                    @foreach (var comment in post.Comments.OrderByDescending(c => c.Created))
+                    {
+                        <div class="rounded bg-muted p-3">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold">@comment.User.Username</span>
+                                <span class="text-sm text-muted-foreground">
+                                    @comment.Created.ToString("MMM dd, yyyy")
+                                </span>
+                            </div>
+                            <p class="mt-1 text-sm">@comment.Content</p>
+                        </div>
+                    }
+                </div>
+
+                <form asp-controller="Comment" asp-action="Create" method="post" class="mt-4">
+                    <input type="hidden" name="PostId" value="@post.Id" />
+                    <div class="flex gap-2">
+                        <input type="text" name="Content" class="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm" 
+                               placeholder="Add a comment..." required minlength="3" />
+                        <button type="submit" class="rounded bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90">
+                            Comment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        function editPost(postId) {
+            const newTitle = prompt("Enter new title:");
+            if (newTitle) {
+                fetch(`/Post/Edit/${postId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ title: newTitle })
+                }).then(() => location.reload());
+            }
+        }
+    </script>
+}

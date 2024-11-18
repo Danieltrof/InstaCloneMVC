@@ -1,27 +1,55 @@
 @model SocialMediaApi.ViewModels.RegisterViewModel
 
-<h2>Register</h2>
+@{
+    ViewData["Title"] = "Register";
+}
 
-<form method="post" asp-action="Register">
-    <div>
-        <label for="Email">Email:</label>
-        <input type="email" id="Email" name="Email" asp-for="Email" />
+<div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-lg">
+        <h1 class="mb-6 text-center text-2xl font-bold text-foreground">Register</h1>
+        
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <div class="mb-4">
+                <label asp-for="Email" class="mb-2 block text-sm font-medium text-foreground">Email</label>
+                <input asp-for="Email" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Email" class="text-sm text-destructive"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="FullName" class="mb-2 block text-sm font-medium text-foreground">Full Name</label>
+                <input asp-for="FullName" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="FullName" class="text-sm text-destructive"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Username" class="mb-2 block text-sm font-medium text-foreground">Username</label>
+                <input asp-for="Username" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Username" class="text-sm text-destructive"></span>
+            </div>
+            
+            <div class="mb-4">
+                <label asp-for="Password" class="mb-2 block text-sm font-medium text-foreground">Password</label>
+                <input asp-for="Password" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Password" class="text-sm text-destructive"></span>
+            </div>
+
+            <div class="mb-6">
+                <label asp-for="ConfirmPassword" class="mb-2 block text-sm font-medium text-foreground">Re-enter Password</label>
+                <input asp-for="ConfirmPassword" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="ConfirmPassword" class="text-sm text-destructive"></span>
+            </div>
+
+            <div class="mb-6">
+                <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                    Register
+                </button>
+            </div>
+
+            <div class="text-center text-sm">
+                <a asp-controller="Account" asp-action="Login" class="text-primary hover:underline">
+                    Already have an account? Login here
+                </a>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="FullName">Full Name:</label>
-        <input type="text" id="FullName" name="FullName" asp-for="FullName" />
-    </div>
-    <div>
-        <label for="Username">Username:</label>
-        <input type="text" id="Username" name="Username" asp-for="Username" />
-    </div>
-    <div>
-        <label for="Password">Password:</label>
-        <input type="password" id="Password" name="Password" asp-for="Password" />
-    </div>
-    <div>
-        <label for="ConfirmPassword">Confirm Password:</label>
-        <input type="password" id="ConfirmPassword" name="ConfirmPassword" asp-for="ConfirmPassword" />
-    </div>
-    <button type="submit">Register</button>
-</form>
+</div>

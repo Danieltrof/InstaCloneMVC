@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="utf-8" />
     <title>@ViewData["Title"] - Social Media</title>
     <link rel="stylesheet" href="~/css/_Layout.cshtml.css" />
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.querySelector('.theme-icon');
+            const currentTheme = html.className;
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.className = newTheme;
+            themeIcon.textContent = newTheme === 'light' ? '🌞' : '🌙';
+            localStorage.setItem('theme', newTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const themeIcon = document.querySelector('.theme-icon');
+            
+            document.documentElement.className = savedTheme;
+            themeIcon.textContent = savedTheme === 'light' ? '🌞' : '🌙';
+        });
+    </script>
 </head>
 <body>
     <header>

@@ -4,21 +4,36 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
+<div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-lg">
+        <h1 class="mb-6 text-center text-2xl font-bold text-foreground">Login</h1>
+        
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+            
+            <div class="mb-4">
+                <label asp-for="Email" class="mb-2 block text-sm font-medium text-foreground">Email</label>
+                <input asp-for="Email" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Email" class="text-sm text-destructive"></span>
+            </div>
+            
+            <div class="mb-6">
+                <label asp-for="Password" class="mb-2 block text-sm font-medium text-foreground">Password</label>
+                <input asp-for="Password" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
+                <span asp-validation-for="Password" class="text-sm text-destructive"></span>
+            </div>
 
-<form method="post">
-    <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
-    </div>
-    <div class="form-group">
-        <label for="Password">Password</label>
-        <input type="password" class="form-control" id="Password" name="Password" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+            <div class="mb-6">
+                <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                    Login
+                </button>
+            </div>
 
-<div class="mt-4">
-    <a href="@Url.Action("Register", "Home")">Don't have an account? Register here.</a>
+            <div class="text-center text-sm">
+                <a asp-controller="Account" asp-action="Register" class="text-primary hover:underline">
+                    Don't have an account? Register here
+                </a>
+            </div>
+        </form>
+    </div>
 </div>
-
