@@ -3,207 +3,167 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SocialMediaApi.DAL;
 using SocialMediaApi.Models;
+using SocialMediaApi.ViewModels;
 
 namespace SocialMediaApi.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class PostController : ControllerBase
+    public class PostController : BaseController
     {
         private readonly IPostRepository _postRepository;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ILogger<PostController> _logger;
+        private readonly long _maxFileSize = 5 * 1024 * 1024; // 5MB
+        private readonly string[] _allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
 
-        public PostController(IPostRepository postRepository, UserManager<ApplicationUser> userManager)
+        public PostController(
+            IPostRepository postRepository, 
+            UserManager<ApplicationUser> userManager,
+            ILogger<PostController> logger)
         {
             _postRepository = postRepository;
             _userManager = userManager;
+            _logger = logger;
         }
 
-        [Authorize]
-        [HttpPost]
-        public async Task<IActionResult> CreatePost([FromForm] PostCreateDto postDto)
-        {
-            Console.WriteLine(postDto);
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var user = await _userManager.GetUserAsync(User);
-
-            if (user == null)
-            {
-                return Unauthorized();
-            }
-
-            // Handle file upload
-            if (postDto.Image != null && postDto.Image.Length > 0)
-            {
-                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(postDto.Image.FileName);
-                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-
-                // Ensure the uploads folder exists
-                if (!Directory.Exists(uploadsFolder))
-                {
-                    Directory.CreateDirectory(uploadsFolder);
-                }
-
-                var filePath = Path.Combine(uploadsFolder, fileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await postDto.Image.CopyToAsync(stream);
-                }
-
-                var post = new Post
-                {
-                    Title = postDto.Title,
-                    User = user,
-                    Created = DateTime.UtcNow,
-                    ImageUrl = $"/uploads/{fileName}"
-                };
-
-                var result = await _postRepository.CreatePost(post);
-
-                if (result)
-                {
-                    return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
-                }
-                else
-                {
-                    return StatusCode(500, "An error occurred while creating the post");
-                }
-            }
-            else
-            {
-                return BadRequest("An image is required to create a post.");
-            }
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPost(int id)
-        {
-            var post = await _postRepository.GetPostById(id);
-            if (post == null)
-            {
-                return NotFound();
-            }
-            return Ok(post);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetAllPosts()
+        public async Task<IActionResult> Index()
         {
             var posts = await _postRepository.GetAllPosts();
-            // Er dette en repo eller en controller greie?
-            return Ok(posts.Select(post => new PostDto
+            var viewModels = posts.Select(post => new PostViewModel
             {
                 Id = post.Id,
                 Title = post.Title,
                 ImageUrl = post.ImageUrl,
                 Created = post.Created,
-                User = new UserDto
-                {
-                    Username = post.User.UserName ?? string.Empty,
-                    Email = post.User.Email ?? string.Empty,
-                    Name = post.User.Name
-                },
+                UserName = post.User.Name,
                 LikesCount = post.Likes.Count,
-                Likes = post.Likes.Select(l => new LikeDto
+                Comments = post.Comments.Select(c => new CommentViewModel
                 {
-                    Id = l.Id,
-                    User = new UserDto
-                    {
-                        Username = l.User.UserName ?? string.Empty,
-                        Email = l.User.Email ?? string.Empty,
-                        Name = l.User.Name
-                    }
-                }).ToList(),
-                Comments = post.Comments.Select(c => new CommentDto
-                {
-                    Id = c.Id,
                     Content = c.Content,
-                    Created = c.Created,
-                    User = new UserDto
-                    {
-                        Username = c.User.UserName ?? string.Empty,
-                        Email = c.User.Email ?? string.Empty,
-                        Name = c.User.Name
-                    }
+                    UserName = c.User.Name,
+                    Created = c.Created
                 }).ToList()
-            }));
+            }).ToList();
+
+            SetLayoutData(viewModels.FirstOrDefault() ?? new PostViewModel());
+            return View(viewModels);
         }
 
         [Authorize]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePost(int id)
+        public IActionResult Create()
+        {
+            var viewModel = new CreatePostViewModel();
+            SetLayoutData(viewModel);
+            return View(viewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Create(CreatePostViewModel model)
+        {
+            if (!ModelState.IsValid || model.Image == null)
+            {
+                SetLayoutData(model);
+                return View(model);
+            }
+
+            if (!ValidateImage(model.Image))
+            {
+                ModelState.AddModelError("Image", "Please upload a valid image file (jpg, jpeg, png, gif) under 5MB.");
+                SetLayoutData(model);
+                return View(model);
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return RedirectToAction("Login", "Account");
+
+            try
+            {
+                var fileName = await SaveImageAsync(model.Image);
+                var post = new Post
+                {
+                    Title = model.Title,
+                    ImageUrl = "/uploads/" + fileName,
+                    User = user
+                };
+
+                await _postRepository.CreatePost(post);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating post for user {UserId}", user.Id);
+                ModelState.AddModelError("", "Error uploading image. Please try again.");
+                SetLayoutData(model);
+                return View(model);
+            }
+        }
+        
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
-            {
-                return Unauthorized();
-            }
-
+                return RedirectToAction("Login", "Account");
+                
             var post = await _postRepository.GetPostById(id);
             if (post == null)
-            {
                 return NotFound();
-            }
 
-            var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-            if (post.User.Id != user.Id && !isAdmin)
+            if (post.User.Id != user.Id)
             {
+                _logger.LogWarning("User {UserId} attempted to delete post {PostId} belonging to another user", user.Id, id);
                 return Forbid();
             }
 
-            var result = await _postRepository.DeletePost(id);
-            if (result)
+            try
             {
-                return NoContent();
+                await DeletePostImage(post.ImageUrl);
+                await _postRepository.DeletePost(id);
+                return RedirectToAction(nameof(Index));
             }
-            else
+            catch (Exception ex)
             {
-                return StatusCode(500, "An error occurred while deleting the post");
+                _logger.LogError(ex, "Error deleting post {PostId} for user {UserId}", id, user.Id);
+                TempData["Error"] = "Failed to delete post. Please try again.";
+                return RedirectToAction(nameof(Index));
             }
         }
 
-        [Authorize]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateDto postDto)
+        private async Task DeletePostImage(string? imageUrl)
         {
-            if (!ModelState.IsValid)
+            if (string.IsNullOrEmpty(imageUrl))
+                return;
+
+            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", imageUrl.TrimStart('/'));
+            if (File.Exists(imagePath))
+                File.Delete(imagePath);
+        }
+
+        private bool ValidateImage(IFormFile file)
+        {
+            if (file.Length > _maxFileSize)
+                return false;
+
+            var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            return _allowedExtensions.Contains(extension);
+        }
+
+        private async Task<string> SaveImageAsync(IFormFile image)
+        {
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+            var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+            var filePath = Path.Combine(uploadDir, fileName);
+            
+            Directory.CreateDirectory(uploadDir);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                return BadRequest(ModelState);
+                await image.CopyToAsync(stream);
             }
 
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return Unauthorized();
-            }
-
-            var existingPost = await _postRepository.GetPostById(id);
-            if (existingPost == null)
-            {
-                return NotFound();
-            }
-
-            if (existingPost.User.Id != user.Id)
-            {
-                return Forbid();
-            }
-
-            existingPost.Title = postDto.Title;
-
-            var result = await _postRepository.UpdatePost(existingPost);
-            if (result)
-            {
-                return Ok(existingPost);
-            }
-            else
-            {
-                return StatusCode(500, "An error occurred while updating the post");
-            }
+            return fileName;
         }
     }
 }

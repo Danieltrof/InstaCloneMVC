@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SocialMediaApi.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]

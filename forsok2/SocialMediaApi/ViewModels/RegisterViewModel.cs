@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SocialMediaApi.ViewModels
 {
-    public class RegisterViewModel
+    public class RegisterViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "Username is required.")]
         [StringLength(50, ErrorMessage = "The username must be between 1 and 50 characters.", MinimumLength = 1)]
