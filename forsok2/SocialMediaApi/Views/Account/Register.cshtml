@@ -8,48 +8,56 @@
     <div class="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-lg">
         <h1 class="mb-6 text-center text-2xl font-bold text-foreground">Register</h1>
         
+        @Html.AntiForgeryToken()
         <form asp-controller="Account" asp-action="Register" method="post">
-            <div class="mb-4">
+            <div class="mb-4 flex flex-col">
                 <label asp-for="Email" class="mb-2 block text-sm font-medium text-foreground">Email</label>
                 <input asp-for="Email" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="Email" class="text-sm text-destructive"></span>
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 flex flex-col">
                 <label asp-for="FullName" class="mb-2 block text-sm font-medium text-foreground">Full Name</label>
                 <input asp-for="FullName" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="FullName" class="text-sm text-destructive"></span>
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 flex flex-col">
                 <label asp-for="Username" class="mb-2 block text-sm font-medium text-foreground">Username</label>
                 <input asp-for="Username" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="Username" class="text-sm text-destructive"></span>
             </div>
             
-            <div class="mb-4">
+            <div class="mb-4 flex flex-col">
                 <label asp-for="Password" class="mb-2 block text-sm font-medium text-foreground">Password</label>
                 <input asp-for="Password" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="Password" class="text-sm text-destructive"></span>
             </div>
 
-            <div class="mb-6">
+            <div class="mb-6 flex flex-col">
                 <label asp-for="ConfirmPassword" class="mb-2 block text-sm font-medium text-foreground">Re-enter Password</label>
                 <input asp-for="ConfirmPassword" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="ConfirmPassword" class="text-sm text-destructive"></span>
             </div>
 
             <div class="mb-6">
-                <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                <button type="submit" class="btn w-full rounded-md bg-gray-800 text-white font-bold px-4 py-2 hover:bg-gray-700">
                     Register
                 </button>
             </div>
 
             <div class="text-center text-sm">
-                <a asp-controller="Account" asp-action="Login" class="text-primary hover:underline">
+                <a href="/Account/Login" class="footer-link">
                     Already have an account? Login here
                 </a>
             </div>
         </form>
     </div>
 </div>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="mb-4 p-4 rounded-lg bg-destructive/10 text-destructive">
+        <div asp-validation-summary="All" class="text-sm"></div>
+    </div>
+}

@@ -1,4 +1,5 @@
 @model IEnumerable<SocialMediaApi.ViewModels.PostViewModel>
+@inject Microsoft.AspNetCore.Identity.SignInManager<SocialMediaApi.Models.ApplicationUser> SignInManager
 
 @{
     ViewData["Title"] = "Home";
@@ -8,7 +9,15 @@
     <div class="grid gap-8">
         @foreach (var post in Model.OrderByDescending(p => p.Created))
         {
-            <div class="rounded-lg border border-border bg-card p-6 shadow-md">
+            <div class="rounded-lg border border-border bg-card p-6 shadow-md">    
+                <div class="flex justify-center">
+                    <div class="relative h-[400px] w-full max-w-[600px]">
+                        <img src="@post.ImageUrl" alt="@post.Title" 
+                             style="width: 100%; max-width: 600px; height: 400px; object-fit: cover; margin: 0 auto; display: block;" 
+                             class="mb-4 rounded-lg" />
+                    </div>
+                </div>
+
                 <div class="mb-4 flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <span class="font-semibold text-foreground">@post.UserName</span>
@@ -32,44 +41,57 @@
                     }
                 </div>
 
-                <h2 class="mb-4 text-xl font-semibold text-foreground">@post.Title</h2>
-                
-                <img src="@post.ImageUrl" alt="@post.Title" class="mb-4 w-full rounded-lg object-cover" />
-                
+                <h2 class="font-semibold text-foreground">@post.Title</h2>
+
                 <div class="mb-4 flex items-center gap-4">
-                    <form asp-controller="Post" asp-action="Like" asp-route-id="@post.Id" method="post" class="inline">
-                        <button type="submit" class="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
-                            <span>❤️</span>
-                            <span>@post.LikesCount</span>
-                        </button>
-                    </form>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <form asp-controller="Post" asp-action="Like" asp-route-id="@post.Id" method="post" class="inline">
+                            <button type="submit" class="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+                                <span>❤️</span>
+                                <span>@post.LikesCount</span>
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="flex items-center gap-1">
+                            <span class="text-sm text-muted-foreground">❤️ @post.LikesCount</span>
+                            <button onclick="showToast('Please log in to like posts')" class="text-sm text-primary hover:underline ml-2">Like</button>
+                        </div>
+                    }
                 </div>
 
                 <div class="space-y-4">
                     @foreach (var comment in post.Comments.OrderByDescending(c => c.Created))
                     {
-                        <div class="rounded bg-muted p-3">
-                            <div class="flex items-center justify-between">
-                                <span class="font-semibold">@comment.User.Username</span>
-                                <span class="text-sm text-muted-foreground">
-                                    @comment.Created.ToString("MMM dd, yyyy")
-                                </span>
-                            </div>
-                            <p class="mt-1 text-sm">@comment.Content</p>
+                        <div class="rounded bg-muted p-3" style="width: 100%; max-width: 600px; display: flex; align-items: center;">
+                            <span class="font-semibold text-foreground" style="flex: 0 0 150px;">@comment.User.Username</span>
+                            <span class="text-sm text-muted-foreground" style="margin-left: 20px; flex: 1;">@comment.Content</span>
+                            <span class="text-sm text-muted-foreground" style="flex: 0 0 auto;">@comment.Created.ToString("MMM dd, yyyy")</span>
                         </div>
                     }
                 </div>
 
-                <form asp-controller="Comment" asp-action="Create" method="post" class="mt-4">
-                    <input type="hidden" name="PostId" value="@post.Id" />
-                    <div class="flex gap-2">
-                        <input type="text" name="Content" class="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm" 
-                               placeholder="Add a comment..." required minlength="3" />
-                        <button type="submit" class="rounded bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90">
-                            Comment
-                        </button>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <form asp-controller="Comment" asp-action="Create" method="post" class="mt-4">
+                        <input type="hidden" name="PostId" value="@post.Id" />
+                        <div class="flex gap-2">
+                            <input type="text" name="Content" class="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm" 
+                                   placeholder="Add a comment..." required minlength="3" />
+                            <button type="submit" class="rounded bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90">
+                                Comment
+                            </button>
+                        </div>
+                    </form>
+                }
+                else
+                {
+                    <div class="mt-4 text-center">
+                        <button onclick="showToast('Please log in to comment')" class="text-primary hover:underline">Comment</button>
                     </div>
-                </form>
+                }
             </div>
         }
     </div>

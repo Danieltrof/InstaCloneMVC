@@ -9,31 +9,43 @@
         <h1 class="mb-6 text-center text-2xl font-bold text-foreground">Login</h1>
         
         <form asp-controller="Account" asp-action="Login" method="post">
-            <input type="hidden" asp-for="ReturnUrl" />
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="ReturnUrl"/>
             
-            <div class="mb-4">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mb-4 p-4 rounded-lg bg-destructive/10 text-destructive">
+                    <div asp-validation-summary="All" class="text-sm"></div>
+                </div>
+            }
+            
+            <div class="mb-4 flex flex-col">
                 <label asp-for="Email" class="mb-2 block text-sm font-medium text-foreground">Email</label>
                 <input asp-for="Email" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="Email" class="text-sm text-destructive"></span>
             </div>
             
-            <div class="mb-6">
+            <div class="mb-6 flex flex-col">
                 <label asp-for="Password" class="mb-2 block text-sm font-medium text-foreground">Password</label>
                 <input asp-for="Password" type="password" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" required />
                 <span asp-validation-for="Password" class="text-sm text-destructive"></span>
             </div>
 
             <div class="mb-6">
-                <button type="submit" class="w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+                <button type="submit" class="btn w-full rounded-md bg-gray-800 text-white font-bold px-4 py-2 hover:bg-gray-700">
                     Login
                 </button>
             </div>
 
             <div class="text-center text-sm">
-                <a asp-controller="Account" asp-action="Register" class="text-primary hover:underline">
+                <a href="/Account/Register" class="footer-link">
                     Don't have an account? Register here
                 </a>
             </div>
         </form>
     </div>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

@@ -4,25 +4,77 @@
     <meta charset="utf-8" />
     <title>@ViewData["Title"] - Social Media</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
     <script>
         function toggleTheme() {
             const html = document.documentElement;
             const themeIcon = document.querySelector('.theme-icon');
             const currentTheme = html.className;
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
+
             html.className = newTheme;
-            themeIcon.textContent = newTheme === 'light' ? '🌞' : '🌙';
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '🌞'; // Change the icon based on the theme
+
+            // Update button styles based on the theme
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                if (newTheme === 'light') {
+                    button.classList.remove('bg-white', 'text-black');
+                    button.classList.add('bg-gray-800', 'text-white', 'font-bold');
+                } else {
+                    button.classList.remove('bg-gray-800', 'text-white', 'font-bold');
+                    button.classList.add('bg-white', 'text-black');
+                }
+            });
+
             localStorage.setItem('theme', newTheme);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             const themeIcon = document.querySelector('.theme-icon');
-            
+
             document.documentElement.className = savedTheme;
-            themeIcon.textContent = savedTheme === 'light' ? '🌞' : '🌙';
+            themeIcon.textContent = savedTheme === 'light' ? '🌙' : '🌞'; // Set the icon based on the saved theme
+
+            // Set button styles based on the saved theme
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                if (savedTheme === 'light') {
+                    button.classList.add('bg-gray-800', 'text-white', 'font-bold');
+                } else {
+                    button.classList.add('bg-white', 'text-black');
+                }
+            });
         });
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            
+            // Get existing toasts and adjust their positions
+            const existingToasts = container.getElementsByClassName('toast');
+            const offset = existingToasts.length * 60; // 60px spacing between toasts
+            toast.style.bottom = `${offset + 16}px`; // 16px is the base bottom spacing
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => {
+                    container.removeChild(toast);
+                    // Reposition remaining toasts
+                    const remainingToasts = container.getElementsByClassName('toast');
+                    Array.from(remainingToasts).forEach((t, index) => {
+                        t.style.bottom = `${(index * 60) + 16}px`;
+                    });
+                }, 300);
+            }, 3000);
+        }
     </script>
 </head>
 <body>
@@ -46,27 +98,27 @@
                     </div>
                     <div class="mb-4 w-full md:mb-0 md:w-1/3">
                         <h3 class="mb-2 text-lg font-semibold text-foreground">Quick Links</h3>
-                        <ul class="text-sm text-muted-foreground">
-                            <li class="mb-1">
-                                <a href="~/Home/Index" class="hover:text-foreground">Home</a>
-                            </li>
-                            <li class="mb-1">
-                                <a href="~/Post/Create" class="hover:text-foreground">Create Post</a>
-                            </li>
-                            <li class="mb-1">
-                                <a href="~/Account/Login" class="hover:text-foreground">Login</a>
-                            </li>
-                            <li class="mb-1">
-                                <a href="~/Account/Register" class="hover:text-foreground">Register</a>
-                            </li>
-                        </ul>
+                        <div class="text-sm text-muted-foreground">
+                            <div class="mb-1">
+                                <a href="~/Post/Index" class="footer-link">Home</a>
+                            </div>
+                            <div class="mb-1">
+                                <a href="~/Post/Create" class="footer-link">Create Post</a>
+                            </div>
+                            <div class="mb-1">
+                                <a href="~/Account/Login" class="footer-link">Login</a>
+                            </div>
+                            <div class="mb-1">
+                                <a href="~/Account/Register" class="footer-link">Register</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="w-full md:w-1/3">
                         <h3 class="mb-2 text-lg font-semibold text-foreground">Gruppe:</h3>
                         <p class="flex flex-col gap-2 text-sm text-muted-foreground">
-                            <a href="https://github.com/QuiescentTrip" target="_blank" class="hover:text-foreground">Fabian Tangen</a>
-                            <a href="https://github.com/SanderSchultz" target="_blank" class="hover:text-foreground">Sander Schultz</a>
-                            <a href="https://github.com/Danieltrof" target="_blank" class="hover:text-foreground">Daniel Trofimovs</a>
+                            <a href="https://github.com/QuiescentTrip" target="_blank" class="footer-link">Fabian Tangen</a>
+                            <a href="https://github.com/SanderSchultz" target="_blank" class="footer-link">Sander Schultz</a>
+                            <a href="https://github.com/Danieltrof" target="_blank" class="footer-link">Daniel Trofimovs</a>
                         </p>
                     </div>
                 </div>
@@ -78,5 +130,6 @@
     </footer>
 
     @RenderSection("Scripts", required: false)
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50"></div>
 </body>
 </html>

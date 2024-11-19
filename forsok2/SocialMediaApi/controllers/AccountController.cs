@@ -28,14 +28,21 @@ namespace SocialMediaApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            _logger.LogInformation("Login attempt for email: {Email}", model.Email);
+            
             if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Model state invalid");
                 return View(model);
+            }
 
             var result = await _authRepository.PasswordSignInAsync(
                 model.Email, 
                 model.Password, 
                 isPersistent: false, 
                 lockoutOnFailure: false);
+
+            _logger.LogInformation("Login result: {Succeeded}", result.Succeeded);
 
             if (result.Succeeded)
             {
@@ -56,8 +63,16 @@ namespace SocialMediaApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+            _logger.LogInformation("Register attempt with data: {@Model}", model);
+            
             if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Model state invalid. Errors: {Errors}", 
+                    string.Join(", ", ModelState.Values
+                        .SelectMany(v => v.Errors)
+                        .Select(e => e.ErrorMessage)));
                 return View(model);
+            }
 
             var user = new ApplicationUser
             {
@@ -67,11 +82,12 @@ namespace SocialMediaApi.Controllers
             };
 
             var result = await _authRepository.CreateUserAsync(user, model.Password);
+            _logger.LogInformation("User creation result: {Succeeded}", result.Succeeded);
+            
             if (result.Succeeded)
             {
-                _logger.LogInformation("User created a new account with password.");
                 await _authRepository.SignInAsync(user, isPersistent: false);
-                return RedirectToLocal(model.ReturnUrl);
+                return RedirectToAction("Index", "Post");
             }
 
             foreach (var error in result.Errors)
@@ -92,9 +108,9 @@ namespace SocialMediaApi.Controllers
 
         private IActionResult RedirectToLocal(string? returnUrl)
         {
-            if (Url.IsLocalUrl(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Post");
         }
     }
 }
